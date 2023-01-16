@@ -7,6 +7,7 @@ export const products = [
     discount: "12%",
     list_price: 13000,
     p_image: lap1,
+    P_status: "1",
   },
   {
     id: "2",
