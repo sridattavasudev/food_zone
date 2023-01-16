@@ -1,4 +1,4 @@
-import lap1 from "../images/lap1.jpg";
+import one from "../images/one.jpg";
 export const products = [
   {
     id: "1",
@@ -6,7 +6,7 @@ export const products = [
     product_title: "L-TYROSINE",
     discount: "12%",
     list_price: 13000,
-    p_image: lap1,
+    p_image: one,
   },
   {
     id: "2",

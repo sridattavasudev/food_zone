@@ -6,8 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, set_proData } from "../features/productSlice";
 import { selectSearch } from "../features/searchSlice";
 import Carousel from "react-bootstrap/Carousel";
-import lap1 from "../images/lap1.jpg";
-import lap2 from "../images/lap2.jpg";
+import one from "../images/one.jpg";
+import two from "../images/two.jpg";
+import three from "../images/three.jpg";
+import four from "../images/four.jpg";
+import five from "../images/five.jpg";
+import six from "../images/six.jpg";
+import seven from "../images/seven.jpg";
 import { products } from "../data/data";
 
 function Cards() {
@@ -31,44 +36,66 @@ function Cards() {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={lap1}
+              src={one}
               width="100vw"
               height="500px"
               alt="First slide"
             />
-            <Carousel.Caption>
-              <h3></h3>
-              <p></p>
-            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={lap2}
+              src={two}
               width="100vw"
               height="500px"
               alt="Second slide"
             />
-
-            <Carousel.Caption>
-              <h3></h3>
-              <p></p>
-            </Carousel.Caption>
           </Carousel.Item>
-          {/* <Carousel.Item>
+          <Carousel.Item>
             <img
               className="d-block w-100"
-              src="holder.js/800x400?text=Third slide&bg=20232a"
+              src={three}
+              width="100vw"
+              height="500px"
               alt="Third slide"
             />
-
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
-              <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-              </p>
-            </Carousel.Caption>
-          </Carousel.Item> */}
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={four}
+              width="100vw"
+              height="500px"
+              alt="Fourth slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={five}
+              width="100vw"
+              height="500px"
+              alt="Fifth slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={six}
+              width="100vw"
+              height="500px"
+              alt="Sixth slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={seven}
+              width="100vw"
+              height="500px"
+              alt="Seventh slide"
+            />
+          </Carousel.Item>
         </Carousel>
       </div>
       <div className="card-container">
