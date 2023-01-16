@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { Link } from "react-router-dom";
 import { set_searchData } from "../features/searchSlice";
-import lap1 from "../images/lap1.jpg";
+import logo from "../images/logo.png";
 function Header() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -23,28 +23,18 @@ function Header() {
     <div>
       <div className="d-flex m-2 justify-content-between mx-4 align-items-center">
         <Link to="/" style={{ color: "black", textDecoration: "none" }}>
-          <h4 className="fw-bold">My Store</h4>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <h4 className="fw-bold">MRCET FOOD_ZONE</h4>
+            <img src={logo} />
+          </div>
         </Link>
-        {/* <h4 className="fw-bold" onClick={() => navigate("/")}>
-            My Store
-          </h4> */}
         <button
           type="button"
           class="btn btn-transparent position-relative"
           style={{ marginTop: "12px" }}
         >
-          {/* <ShoppingCartIcon
-            style={{
-              marginTop: "-50%",
-              marginRight: "30px",
-              marginBottom: "-15px",
-            }}
-          /> */}
-          <img src={lap1} width="50px" height="50px" alt="cart_image" />
           <Link to="/cart" style={{ color: "black" }}>
-            <ShoppingCartIcon
-              style={{ marginTop: "-50%", marginBottom: "-15px" }}
-            />
+            <ShoppingCartIcon style={{ marginTop: "-50%", fontSize: "45px" }} />
           </Link>
 
           {user.length !== 0 && (
