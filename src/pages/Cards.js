@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 // import data from "../data/data.json";
-import CardMap from "./CardMap";
 import "./Cards.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, set_proData } from "../features/productSlice";
@@ -14,23 +13,22 @@ import five from "../images/five.jpg";
 import six from "../images/six.jpg";
 import seven from "../images/seven.jpg";
 import { products } from "../data/data";
+import { useNavigate } from "react-router-dom";
+import CardMap from "./CardMap";
 
 function Cards() {
   const dispatch = useDispatch();
   const product = useSelector(selectProduct);
   const search = useSelector(selectSearch);
+  const navigate = useNavigate();
   useEffect(() => {
     if (product.length === 0) {
-      let pro_data = products;
-      let updated_proData = pro_data.map((item) => {
-        return { ...item, quantity: 1, state: false };
-      });
-      dispatch(set_proData(updated_proData));
+      dispatch(set_proData(products));
     }
   }, []);
 
   return (
-    <>
+    <div className="total-container">
       <div>
         <Carousel>
           <Carousel.Item>
@@ -98,24 +96,72 @@ function Cards() {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="card-container">
-        {product
-          ?.filter((item) =>
-            item.product_title.toLowerCase().includes(search.toLowerCase())
-          )
-          ?.map((item, index) => {
-            return (
-              <CardMap
-                item={item}
-                index={index}
-                key={index}
-                // products={products}
-                // setProducts={setProducts}
-              />
-            );
-          })}
+      <div>
+        <div className="card-container">
+          <h4>Mobiles</h4>
+          <div>Laptops</div>
+          <div>Clothes</div>
+          <div>Electronics</div>
+        </div>
+        {/* Mobiles */}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "mobile" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>Mobiles</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "mobile" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* laptops */}
+        <div>
+          <h2>Laptops</h2>
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "laptop" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        <div>
+          <h2>Groceries</h2>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

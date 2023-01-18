@@ -1,0 +1,27 @@
+.total-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: orange;
+  /* background-image: url(../images/five.jpg); */
+  /* max-height: max-content; */
+}
+.card-container {
+  display: grid;
+  min-width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+  place-items: center;
+  margin-top: 3vh;
+}
+
+.card-container > div {
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 5px;
+}
+.card-container > h4 {
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 5px;
+}

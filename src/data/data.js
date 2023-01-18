@@ -7,6 +7,9 @@ export const products = [
     discount: "12%",
     list_price: 13000,
     p_image: one,
+    quantity: 1,
+    state: false,
+    type: "mobile",
   },
   {
     id: "2",
@@ -16,6 +19,9 @@ export const products = [
     list_price: 5000,
     p_image:
       "https://biomall.live/assets/product/mp-biomedicals_1521887454.jpg",
+    quantity: 1,
+    state: false,
+    type: "mobile",
   },
   {
     id: "3",
@@ -24,6 +30,9 @@ export const products = [
     discount: "3%",
     list_price: 5400,
     p_image: "https://biomall.live/assets/product/himedia_1593596437.jpg",
+    quantity: 1,
+    state: false,
+    type: "mobile",
   },
   {
     id: "4",
@@ -33,6 +42,9 @@ export const products = [
     list_price: 4000,
     p_image:
       "https://biomall.live/assets/product/sabouraud-dextrose-agar-plate-w-cycloheximide-mp-pt-1563531585.jpg",
+    quantity: 1,
+    state: false,
+    type: "laptop",
   },
   {
     id: "5",
@@ -42,5 +54,8 @@ export const products = [
     list_price: 3200,
     p_image:
       "https://biomall.live/assets/product/amphotericin-b-em-st-1564134382.jpg",
+    quantity: 1,
+    state: false,
+    type: "laptop",
   },
 ];

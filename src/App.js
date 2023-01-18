@@ -2,9 +2,9 @@ import "./App.css";
 import Header from "./components/Header";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import Cards from "./components/Cards";
+import Cards from "./pages/Cards";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
