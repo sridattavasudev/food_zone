@@ -98,23 +98,31 @@ function Cards() {
       </div>
       <div>
         <div className="card-container">
-          <h4>Mobiles</h4>
-          <div>Laptops</div>
-          <div>Clothes</div>
-          <div>Electronics</div>
+          <h4>BREAKFAST</h4>
+          <h4>LUNCH</h4>
+          <h4>PUFFS</h4>
+          <h4>PASTRIES</h4>
+          <h4>SMOOTHIES</h4>
+          <h4>SHAKES</h4>
+          <h4>MOJITOS</h4>
+          <h4>FRANKIES</h4>
+          <h4>FRIES</h4>
+          <h4>SPLSANDWICH</h4>
+          <h4>BURGERS</h4>
+          <h4>ICECREAM</h4>
         </div>
-        {/* Mobiles */}
+        {/* BREAKFAST*/}
         <div>
           {product?.filter(
             (item) =>
-              item.type === "mobile" &&
+              item.type === "BREAKFAST" &&
               item.product_title.toLowerCase().includes(search.toLowerCase())
-          ).length !== 0 && <h2>Mobiles</h2>}
+          ).length !== 0 && <h2>BREAKFAST</h2>}
           <div className="card-container">
             {product
               ?.filter(
                 (item) =>
-                  item.type === "mobile" &&
+                  item.type === "BREAKFAST" &&
                   item.product_title
                     .toLowerCase()
                     .includes(search.toLowerCase())
@@ -132,14 +140,18 @@ function Cards() {
               })}
           </div>
         </div>
-        {/* laptops */}
+        {/* LUNCH */}
         <div>
-          <h2>Laptops</h2>
+          {product?.filter(
+            (item) =>
+              item.type === "LUNCH" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>LUNCH</h2>}
           <div className="card-container">
             {product
               ?.filter(
                 (item) =>
-                  item.type === "laptop" &&
+                  item.type === "LUNCH" &&
                   item.product_title
                     .toLowerCase()
                     .includes(search.toLowerCase())
@@ -157,8 +169,295 @@ function Cards() {
               })}
           </div>
         </div>
+        {/* PUFFS*/}
         <div>
-          <h2>Groceries</h2>
+          {product?.filter(
+            (item) =>
+              item.type === "PUFFS" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>PUFFS</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "PUFFS" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* PASTRIES*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "PASTRIES" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>PASTRIES</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "PASTRIES" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* SMOOTHIES*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "SMOOTHIES" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>SMOOTHIES</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "SMOOTHIES" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* SHAKES*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "SHAKES" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>SHAKES</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "SHAKES" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* MOJITOS*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "MOJITOS" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>MOJITOS</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "MOJITOS" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* FRANKIES*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "FRANKIES" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>FRANKIES</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "FRANKIES" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* FRIES*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "FRIES" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>FRIES</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "FRIES" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* SPLSANDWICH*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "SPLSANDWICH" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>SPLSANDWICH</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "SPLSANDWICH" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* BURGER*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "BURGERS" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>BURGERS</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "BURGERS" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
+        </div>
+        {/* ICECREAM*/}
+        <div>
+          {product?.filter(
+            (item) =>
+              item.type === "ICECREAM" &&
+              item.product_title.toLowerCase().includes(search.toLowerCase())
+          ).length !== 0 && <h2>ICECREAM</h2>}
+          <div className="card-container">
+            {product
+              ?.filter(
+                (item) =>
+                  item.type === "ICECREAM" &&
+                  item.product_title
+                    .toLowerCase()
+                    .includes(search.toLowerCase())
+              )
+              ?.map((item, index) => {
+                return (
+                  <CardMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    // products={products}
+                    // setProducts={setProducts}
+                  />
+                );
+              })}
+          </div>
         </div>
       </div>
     </div>

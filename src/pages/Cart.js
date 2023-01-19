@@ -94,15 +94,7 @@ function Cart() {
     }
     if (user.length > 0) {
       let prices = user.map((item) => {
-        if (item.discount.length > 0) {
-          let price = item.list_price;
-          let discount = item.discount;
-          let parsed = parseInt(discount.slice(0, discount.length - 1));
-          let result = price - (parsed / 100) * price;
-          return result;
-        } else {
-          return item.list_price;
-        }
+        return item.list_price;
       });
       let resultprice = prices.reduce((a, b) => a + b);
       setPrice(resultprice);
@@ -141,43 +133,11 @@ function Cart() {
                   <div style={{ fontWeight: "bold" }}>
                     {product.product_title.toUpperCase()}
                   </div>
-                  {product.discount.length > 0 ? (
-                    <div
-                      style={{
-                        fontWeight: "bold",
-                        display: "flex",
-                        alignItems: "center",
-                      }}
-                    >
-                      <span
-                        style={{
-                          color: "#f48135",
-                          fontSize: "24px",
-                          marginRight: "7px",
-                        }}
-                      >
-                        ₹ {discountFn(product)}
-                      </span>
-                      <span
-                        className="text-muted"
-                        style={{
-                          textDecoration: "line-through",
-                          marginRight: "7px",
-                        }}
-                      >
-                        ₹ {numberWithCommas(product.list_price)}.00
-                      </span>
-                      <span style={{ color: "green", fontSize: "18px" }}>
-                        {product.discount} off
-                      </span>
-                    </div>
-                  ) : (
-                    <div style={{ fontWeight: "bold" }}>
-                      <span style={{ color: "#f48135", fontSize: "24px" }}>
-                        ₹ {numberWithCommas(product.list_price)}.00
-                      </span>
-                    </div>
-                  )}
+                  <div style={{ fontWeight: "bold" }}>
+                    <span style={{ color: "#f48135", fontSize: "24px" }}>
+                      ₹ {numberWithCommas(product.list_price)}.00
+                    </span>
+                  </div>
 
                   <Button
                     color="warning"
