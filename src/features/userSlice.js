@@ -21,8 +21,7 @@ export const userSlice = createSlice({
         item.id === action.payload.pro_id
           ? {
               ...item,
-              quantity: item.quantity + 1,
-              list_price: item.list_price + action.payload.base_price,
+              display_quantity: parseInt(item?.display_quantity) + 1,
             }
           : item
       );
@@ -33,8 +32,7 @@ export const userSlice = createSlice({
         item.id === action.payload.pro_id
           ? {
               ...item,
-              quantity: item.quantity - 1,
-              list_price: item.list_price - action.payload.base_price,
+              display_quantity: parseInt(item?.display_quantity) - 1,
             }
           : item
       );

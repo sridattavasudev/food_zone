@@ -1,102 +1,56 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import data from "../data/data.json";
 import "./Cards.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, set_proData } from "../features/productSlice";
 import { selectSearch } from "../features/searchSlice";
-import Carousel from "react-bootstrap/Carousel";
-import one from "../images/one.jpg";
-import two from "../images/two.jpg";
-import three from "../images/three.jpg";
-import four from "../images/four.jpg";
-import five from "../images/five.jpg";
-import six from "../images/six.jpg";
-import seven from "../images/seven.jpg";
+
 import { products } from "../data/data";
 import { useNavigate } from "react-router-dom";
 import CardMap from "./CardMap";
+import Slider from "../components/Slider";
+import axios from "axios";
 
 function Cards() {
   const dispatch = useDispatch();
   const product = useSelector(selectProduct);
   const search = useSelector(selectSearch);
   const navigate = useNavigate();
-  useEffect(() => {
-    if (product.length === 0) {
-      dispatch(set_proData(products));
+
+  const allItemsFn = async () => {
+    try {
+      let response = await axios({
+        url: "http://localhost:5000/api/all-items",
+        method: "GET",
+      });
+      // console.log(response, "response");
+      if (response.status == 200) {
+        let updated_prodata = response.data?.map((item) => ({
+          ...item,
+          display_quantity: 1,
+        }));
+        console.log(updated_prodata, "response");
+        dispatch(set_proData(updated_prodata));
+      } else {
+        alert("Error");
+        console.log("ERROR");
+      }
+    } catch (error) {
+      alert("Error");
+      console.log(error);
     }
+  };
+
+  useEffect(() => {
+    allItemsFn();
   }, []);
 
   return (
     <div className="total-container">
       <div>
-        <Carousel>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={one}
-              width="100vw"
-              height="500px"
-              alt="First slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={two}
-              width="100vw"
-              height="500px"
-              alt="Second slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={three}
-              width="100vw"
-              height="500px"
-              alt="Third slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={four}
-              width="100vw"
-              height="500px"
-              alt="Fourth slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={five}
-              width="100vw"
-              height="500px"
-              alt="Fifth slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={six}
-              width="100vw"
-              height="500px"
-              alt="Sixth slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={seven}
-              width="100vw"
-              height="500px"
-              alt="Seventh slide"
-            />
-          </Carousel.Item>
-        </Carousel>
+        <Slider />
       </div>
-      <div>
+      <div className="side-heading">
         <div className="card-container">
           <h4>BREAKFAST</h4>
           <h4>LUNCH</h4>

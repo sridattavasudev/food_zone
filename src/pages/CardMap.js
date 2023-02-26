@@ -15,20 +15,14 @@ export default function CardMap({ item, index }) {
     if (item.state) {
       return;
     } else {
-      // let pro_data = data?.products;
       let updated_proData = pro_data.map((i) =>
         i.product_title === item.product_title ? { ...i, state: true } : i
       );
       dispatch(set_proData(updated_proData));
-      // setProducts((cate) =>
-      //   cate.map((i) =>
-      //     i.product_title === item.product_title ? { ...i, state: true } : i
-      //   )
-      // );
       dispatch(set_data(item));
     }
   };
-  // console.log(products);
+  // console.log(pro_data, "card map");
   return (
     <Card style={{ width: "18rem", margin: "1vw" }}>
       <Card.Img variant="top" src={item.p_image} height="230vh" />
@@ -50,7 +44,7 @@ export default function CardMap({ item, index }) {
           </Button>
         </div>
         <Card.Title className="text-center">
-          {item.product_title.slice(0, 15)}
+          {item.product_title.slice(0, 15)} <span>{`(${item?.quantity})`}</span>
         </Card.Title>
         <Card.Text
           style={{ color: "#f47d2f", fontWeight: "bold", textAlign: "center" }}

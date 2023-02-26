@@ -24,4 +24,70 @@
   cursor: pointer;
   border: 1px solid black;
   padding: 5px;
+  width: 200px;
+  text-align: center;
+}
+.side-heading h2 {
+  padding-left: 50px;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+.side-heading h2::after {
+  content: ":";
+}
+
+/* Home page */
+.home-container {
+  width: 100%;
+  height: 77vh;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+}
+.home-container > h2 {
+  border: 2px solid black;
+  cursor: pointer;
+  width: 130px;
+  text-align: center;
+}
+
+/* Admin page */
+.admin-container {
+  width: 100%;
+  height: 77vh;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+}
+.admin-container > h2 {
+  border: 2px solid black;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+}
+
+/* List orders */
+.list_orders_heading {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 2vh;
+}
+.list_orders {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+.list_orders div {
+  width: 50%;
+}
+.list_orders_cart {
+  display: flex;
+  width: 50vw;
+  justify-content: space-between;
+}
+.list_orders_cart div {
+  width: 3%;
 }
