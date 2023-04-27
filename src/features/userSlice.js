@@ -18,7 +18,7 @@ export const userSlice = createSlice({
     },
     inc_quantity: (state, action) => {
       let state1 = state.map((item) =>
-        item.id === action.payload.pro_id
+        item._id === action.payload.pro_id
           ? {
               ...item,
               display_quantity: parseInt(item?.display_quantity) + 1,
@@ -29,7 +29,7 @@ export const userSlice = createSlice({
     },
     dec_quantity: (state, action) => {
       let state1 = state.map((item) =>
-        item.id === action.payload.pro_id
+        item._id === action.payload.pro_id
           ? {
               ...item,
               display_quantity: parseInt(item?.display_quantity) - 1,

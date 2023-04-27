@@ -39,7 +39,7 @@ function UpdateModal({
           product_title: items.product_title,
           list_price: items.list_price,
           p_image: items.p_image,
-          quantity: items.quantity,
+          quantity: "1",
           type: items.type,
           admin: canteen_user?.admin,
         },
@@ -118,7 +118,7 @@ function UpdateModal({
                   value={items.p_image}
                 />
               </FormGroup>
-              <FormGroup>
+              {/* <FormGroup>
                 <Label for="quantity">Quantity</Label>
                 <Input
                   type="text"
@@ -126,7 +126,7 @@ function UpdateModal({
                   onChange={handleChange}
                   value={items.quantity}
                 />
-              </FormGroup>
+              </FormGroup> */}
               <FormGroup>
                 <Label for="type">Type</Label>
                 <Input

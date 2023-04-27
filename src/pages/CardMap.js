@@ -44,7 +44,7 @@ export default function CardMap({ item, index }) {
           </Button>
         </div>
         <Card.Title className="text-center">
-          {item.product_title.slice(0, 15)} <span>{`(${item?.quantity})`}</span>
+          {item.product_title.slice(0, 15)}
         </Card.Title>
         <Card.Text
           style={{ color: "#f47d2f", fontWeight: "bold", textAlign: "center" }}

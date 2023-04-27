@@ -33,13 +33,14 @@ function Cart() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const incrementBtn = (pro) => {
+    console.log(pro, "product single");
     let base_product = products.find((item) => item.id == pro.id);
-    if (pro.display_quantity == base_product.quantity) {
-      alert("Quantity Exceeded");
-      return;
-    }
+    // if (pro.display_quantity == base_product.quantity) {
+    //   alert("Quantity Exceeded");
+    //   return;
+    // }
     let details = {
-      pro_id: pro.id,
+      pro_id: pro._id,
     };
     dispatch(inc_quantity(details));
   };
@@ -57,7 +58,7 @@ function Cart() {
     } else {
       let base_product = products.filter((item) => item.id === pro.id);
       let details = {
-        pro_id: pro.id,
+        pro_id: pro._id,
       };
       dispatch(dec_quantity(details));
     }
@@ -81,7 +82,7 @@ function Cart() {
     });
     dispatch(set_proData(state1));
     if (type != "buyButton") {
-      navigate("/");
+      navigate("/cards");
     }
   };
   const numberWithCommas = (x) => {

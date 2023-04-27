@@ -178,7 +178,7 @@ export function AddItems() {
           product_title: items.product_title,
           list_price: items.list_price,
           p_image: items.p_image,
-          quantity: items.quantity,
+          quantity: "1",
           type: items.type,
           admin: canteen_user?.admin,
         },
@@ -250,7 +250,7 @@ export function AddItems() {
             value={items.p_image}
           />
         </FormGroup>
-        <FormGroup>
+        {/* <FormGroup>
           <Label for="quantity">Quantity</Label>
           <Input
             type="text"
@@ -258,7 +258,7 @@ export function AddItems() {
             onChange={handleChange}
             value={items.quantity}
           />
-        </FormGroup>
+        </FormGroup> */}
         <FormGroup>
           <Label for="type">Type</Label>
           <Input type="select" name="select" onChange={handleChange} id="type">
@@ -328,7 +328,7 @@ export function UpdateItems() {
       list_price: item.list_price,
       p_image: item.p_image,
       product_title: item.product_title,
-      quantity: item.quantity,
+      quantity: "1",
       type: item.type,
       _id: item._id,
     });
@@ -372,8 +372,8 @@ export function UpdateItems() {
           }}
         >
           <h5>Item</h5>
-          <h5>Quantity</h5>
-          <h5>Price</h5>
+          {/* <h5>Quantity</h5> */}
+          <h5 style={{ paddingLeft: "25px" }}>Price</h5>
           <h5>Update</h5>
         </div>
         <ListGroup>
@@ -388,7 +388,7 @@ export function UpdateItems() {
               >
                 <div style={{ width: "5.9%" }}>{item.product_title}</div>
 
-                <div style={{ width: "5.9%" }}>{item?.quantity}</div>
+                {/* <div style={{ width: "5.9%" }}>{item?.quantity}</div> */}
 
                 <div>{item?.list_price}</div>
                 <div>
